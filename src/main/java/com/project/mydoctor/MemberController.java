@@ -74,9 +74,7 @@ public class MemberController {
 		out.println("location.href='findAccount'");
 		out.println("</script>");
 		out.close();
-		
-
-	}
+		}
 	//jisu_0204_아이디/비밀번호 찾기 페이지로 이동
 	@GetMapping(value="/findAccount")
 	public String findAccount() {

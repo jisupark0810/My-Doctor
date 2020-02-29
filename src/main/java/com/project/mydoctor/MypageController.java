@@ -122,8 +122,9 @@ public class MypageController {
 
 	// 정보수정하기이전 비밀번호 맞는지 확인
 	@RequestMapping(value = "/modifyckpass.do")
-	public void gomodifyckpass(@RequestParam("password") String password, HttpServletRequest request,
-			HttpServletResponse response, HttpSession session) throws Exception {
+	public void gomodifyckpass(@RequestParam("password") String password, 
+			HttpServletRequest request,
+			HttpServletResponse response, HttpSession session) throws Exception{
 
 		String id = (String) session.getAttribute("loginid");
 
@@ -425,8 +426,6 @@ public class MypageController {
 	//jisu_0131_후기작성폼에 진료기록 불러옵니다.
 	@RequestMapping(value = "/reviewwrite.do")
 	public ModelAndView record(ModelAndView mv, int reserveNo, HttpSession session) {
-		
-		 
 		Reservation r = reserveService.getReserveDetail(reserveNo);
 		mv.addObject("reserveRecord", r);
 		mv.setViewName("mypage/review");
